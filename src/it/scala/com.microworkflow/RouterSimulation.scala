@@ -10,10 +10,10 @@ import io.gatling.http.Predef._
 
 class RouterSimulation extends Simulation {
 
+  private val getReponseKey = "getResponse"
+
   def makeProtocolBuilder = http
     .baseURL("http://localhost:8080")
-
-  private val getReponseKey = "getResponse"
 
   val getRequestBuilder = http("get request")
     .get("/generate")
